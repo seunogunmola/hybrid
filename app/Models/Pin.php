@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Pin extends Model
 {
@@ -36,5 +37,9 @@ class Pin extends Model
             $pinData->user_id = $user->id;
             $pinData->save();
         }
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

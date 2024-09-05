@@ -23,6 +23,8 @@ Route::post('/verify',[StaffController::class,'verifyPin'])->name('verify');
 Route::get('/register',[StaffController::class,'register'])->name('staff.register');
 Route::post('/register',[StaffController::class,'store'])->name('staff.store');
 
+Route::get('/success',[StaffController::class,'success'])->name('register.success');
+
 
 Route::get('/', function () {
     $pageTitle = 'Login';

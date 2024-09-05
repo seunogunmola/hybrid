@@ -67,10 +67,20 @@ class StaffController extends Controller
             //USE PIN
             Pin::usePin($pin,$user);
             $message = 'Your Registration was Successful, We will get back to You Soon';
-            return redirect()->route('verify.page')->with('success',$message);
+            return redirect()->route('register.success',['uniqueid'=>$data['uniqueid']])->with('success',$message);
         }
         else{
             return redirect()->back();
         }
+    }
+
+    public function success(Request $request){
+        $uniqueid = $request->uniqueid;
+        $user = User::where('uniqueid',$uniqueid)->with('pin')->first();
+        if(!$user){
+            return redirect()->route('verify.page');
+        }
+        $pageTitle = "Registration Success";
+        return view('staff.success',compact('user','pageTitle'));
     }
 }

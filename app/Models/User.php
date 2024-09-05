@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function department(){
         return $this->belongsTo(Destination::class);
     }
+
+    public function pin(){
+        return $this->hasMany(Pin::class);
+    }
 }

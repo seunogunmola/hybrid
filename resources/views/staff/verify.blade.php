@@ -39,6 +39,11 @@
                                         <h4 class="">{{ $pageTitle }}</h4>
                                     </div>
                                     <div class="form-body">
+                                        @if (session('success'))
+                                            <div class="alert alert-success">
+                                                {{ session('success') }}
+                                            </div>
+                                        @endif
                                         @if (session('error'))
                                             <div class="alert alert-danger">
                                                 {{ session('error') }}
