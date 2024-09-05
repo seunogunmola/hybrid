@@ -26,8 +26,8 @@
     <div class="wrapper">
         <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
             <div class="container-fluid">
-                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-                    <div class="col mx-auto">
+                <div class="row">
+                    <div class="col">
                         <div class="mb-4 text-center">
                             <h3>
                                 Support Worker/ HCA
@@ -73,32 +73,32 @@
                                                 <input type="text" name="lastname" class="form-control"
                                                     id="inputLastName" placeholder="Your Last Name" required value="{{ old('lastname') }}">
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-sm-6">
                                                 <label for="inputEmailAddress" class="form-label">Email Address</label>
                                                 <input type="email" name="email" class="form-control"
                                                     id="inputEmailAddress" placeholder="Your Email Address" required value="{{ old('email') }}">
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-sm-6">
                                                 <label for="inputEmailAddress" class="form-label">Phone Number</label>
                                                 <input type="tel" name="phone" class="form-control"
                                                     id="inputEmailAddress" placeholder="Your Phone Number" required value="{{ old('phone') }}">
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-sm-6">
                                                 <label for="inputFirstName" class="form-label"> Username</label>
                                                 <input type="text" name="username" class="form-control"
                                                     id="inputFirstName" placeholder="Enter a Username" required value="{{ old('username') }}">
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-sm-6">
                                                 <label for="inputFirstName" class="form-label"> Password</label>
                                                 <input type="password" name="password" class="form-control"
                                                     id="inputFirstName" placeholder="Your Password" required>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-sm-6">
                                                 <label for="inputFirstName" class="form-label"> Confirm Password</label>
                                                 <input type="password" name="password_confirmation" class="form-control"
                                                     id="inputFirstName" placeholder="Confirm Password" required>
-                                            </div>
-                                            <div class="col-12">
+                                            </div>                                              
+                                            <div class="col-sm-6">
                                                 <div class="form-check form-switch">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="flexSwitchCheckChecked">

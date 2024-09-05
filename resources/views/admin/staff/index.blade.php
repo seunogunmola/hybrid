@@ -45,8 +45,8 @@
                                             <button class="btn btn-primary dropdown-toggle" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">Action</button>
                                             <ul class="dropdown-menu" style="margin: 0px;">
-                                                <li><a target="_blank" class="dropdown-item" href=""
-                                                        target="">View Details</a>
+                                                <li><a target="_blank" class="dropdown-item" href="{{ route('register.success',['uniqueid'=>$staff->uniqueid])}}"
+                                                        >View Details</a>
                                                 </li>
                                             </ul>
                                         </div>
