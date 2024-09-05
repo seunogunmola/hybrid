@@ -30,16 +30,14 @@
                     <div class="col">
                         <div class="mb-4 text-center">
                             <h3>
-                                Support Worker/ HCA
+                                Support Worker/ HCA Registration
                             </h3>
                         </div>
                         <div class="card">
                             <div class="card-body">
                                 <div class="border p-4 rounded">
-                                    <div class="text-center">
-                                        <h4 class="">{{ $pageTitle }}</h4>
-                                    </div>
                                     <div class="form-body">
+                                        <h5>Basic Data</h5>
                                         <form class="row g-3" method="POST" action="{{ route('staff.store') }}">
                                             @if(session('error'))
                                                 <div class="alert alert-danger">
@@ -83,6 +81,7 @@
                                                 <input type="tel" name="phone" class="form-control"
                                                     id="inputEmailAddress" placeholder="Your Phone Number" required value="{{ old('phone') }}">
                                             </div>
+                                            <h5>Account Setup</h5>
                                             <div class="col-sm-6">
                                                 <label for="inputFirstName" class="form-label"> Username</label>
                                                 <input type="text" name="username" class="form-control"
@@ -98,7 +97,7 @@
                                                 <input type="password" name="password_confirmation" class="form-control"
                                                     id="inputFirstName" placeholder="Confirm Password" required>
                                             </div>                                              
-                                            <div class="col-sm-6">
+                                            <div class="col-6">
                                                 <div class="form-check form-switch">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="flexSwitchCheckChecked">
@@ -106,10 +105,10 @@
                                                         read and agree to Terms & Conditions</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-6">
                                                 <div class="d-grid">
                                                     <button type="submit" class="btn btn-primary">
-                                                        Register</button>
+                                                        Continue </button>
                                                 </div>
                                             </div>
                                         </form>

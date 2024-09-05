@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\PinFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Pin;
 
-class PinSeeder extends Seeder
+class ReferenceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +14,6 @@ class PinSeeder extends Seeder
      */
     public function run()
     {
-        Pin::factory(100)->create();
+        //
     }
 }

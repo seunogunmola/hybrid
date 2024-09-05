@@ -25,6 +25,9 @@ Route::post('/register',[StaffController::class,'store'])->name('staff.store');
 
 Route::get('/success',[StaffController::class,'success'])->name('register.success');
 
+Route::get('/form',[StaffController::class,'form'])->name('staff.form');
+Route::post('/form',[StaffController::class,'storeForm'])->name('staff.form.store');
+
 
 Route::get('/', function () {
     $pageTitle = 'Login';

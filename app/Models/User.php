@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function pin(){
         return $this->hasMany(Pin::class);
     }
+
+    public function references(){
+        return $this->hasMany(Reference::class);
+    }
+
+    public function employments(){
+        return $this->hasMany(EmploymentHistory::class);
+    }
 }

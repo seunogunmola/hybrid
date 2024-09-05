@@ -68,6 +68,60 @@
                                                 <td>Phone</td>
                                                 <td>{{ $user->phone }}</td>
                                             </tr>
+                                            <tr>
+                                                <td>Supporting Statement</td>
+                                                <td>{{ $user->supporting_statement }}</td>
+                                            </tr>
+                                            @if($user->employments)
+                                            <tr style="background: black;color:white;">
+                                                <td colspan="2">
+                                                    Employment History
+                                                </td>
+                                            </tr>
+                                                @foreach ($user->employments as $employments)
+                                                <tr>
+                                                    <td>Company Name</td>
+                                                    <td>{{ $employments->company_name }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Job Title</td>
+                                                    <td>{{ $employments->job_title }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Job Start Date </td>
+                                                    <td>{{ $employments->job_start_date }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Job Start Date</td>
+                                                    <td>{{ $employments->job_end_date }}</td>
+                                                </tr>         
+                                                @endforeach
+                                            @endif
+                                            @if($user->references)
+                                            <tr style="background: black;color:white;">
+                                                <td colspan="2">
+                                                    References
+                                                </td>
+                                            </tr>
+                                                @foreach ($user->references as $reference)
+                                                <tr>
+                                                    <td>Referee Name</td>
+                                                    <td>{{ $reference->referee_name }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Company Name</td>
+                                                    <td>{{ $reference->referee_company_name }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Referee Job Title </td>
+                                                    <td>{{ $reference->referee_job_title }}</td>
+                                                </tr>                                                    
+                                                <tr>
+                                                    <td>Referee Email</td>
+                                                    <td>{{ $reference->referee_email }}</td>
+                                                </tr>         
+                                                @endforeach
+                                            @endif
                                         </table>
 
                                     </div>
