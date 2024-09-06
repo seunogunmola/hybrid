@@ -24,6 +24,9 @@ class StaffFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'address'=>'string|required',
+            'post_town'=>'string|required',
+            'post_code'=>'string|required',
             'cv_file'=>'file|required',
             'supporting_statement'=>'string',
             'job_title'=>'array|required|min:1',
@@ -47,6 +50,17 @@ class StaffFormRequest extends FormRequest
             // 'referee_job_title.*'=>'string|required',
             'referee_email'=>'array|required|min:1',
             'referee_email.*'=>'string|required',
+            'adult_cautions'=>'string|required',
+            'barred_from_children'=>'string|required',
+            'child_court_protection'=>'string|required',
+            'adult_court_protection'=>'string|required',
+            'childcare_cancellation'=>'string|required',
+            'residential_cancellation'=>'string|required',
+            'teaching_prohibition'=>'string|required',
+            'adult_prohibition'=>'string|required',
+            'barred_by_employer'=>'string|required',
+            'barred_by_professional_body'=>'string|required',
+            'declaration_details'=>'string|required',            
         ];
     }
 }

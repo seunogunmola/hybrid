@@ -80,14 +80,36 @@ class StaffController extends Controller
         }
     }
 
-    public function form(){
+    public function form(Request $request){
+        if($request->uniqueid){
+            $user = User::where('uniqueid',$request->uniqueid)->first();    
+        }
+        else{
+            $user = User::find(Auth::user()->id)->first();
+        }
+        
         $pageTitle = "Registration Form";
-        return view('staff.form',compact('pageTitle'));
+        return view('staff.form',compact('pageTitle','user'));
     }
 
     public function storeForm(StaffFormRequest $request){
         $user = User::find(Auth::user()->id);
+        $staffData = $request->validated();        
         $user->supporting_statement = $request->supporting_statement;
+        $user->address = $request->address;
+        $user->post_town = $request->post_town;
+        $user->post_code = $request->post_code;
+        $user->adult_cautions = $request->adult_cautions;
+        $user->barred_from_children = $request->barred_from_children;
+        $user->child_court_protection = $request->child_court_protection;
+        $user->adult_court_protection = $request->adult_court_protection;
+        $user->childcare_cancellation = $request->childcare_cancellation;
+        $user->residential_cancellation = $request->residential_cancellation;
+        $user->teaching_prohibition = $request->teaching_prohibition;
+        $user->adult_prohibition = $request->adult_prohibition;
+        $user->barred_by_employer = $request->barred_by_employer;
+        $user->barred_by_professional_body = $request->barred_by_professional_body;
+        $user->declaration_details = $request->declaration_details;
         if ($request->hasFile('cv_file')) {
             $file = $request->file('cv_file');
             $path = $file->store('cv_files', 'public');            
@@ -95,7 +117,7 @@ class StaffController extends Controller
         $user->cv = $path;
         $user->save();
 
-        $staffData = $request->validated();
+        
         $employment_history = [];
         $references = [];
         //LOOP THROUGH JOB HISTORIES

@@ -43,7 +43,12 @@
                                                 {{ session('success') }}
                                             </div>
                                         @endif
-                                        <table class="table mb-0">
+                                        <table class="table mb-0 table-bordered table-striped">
+                                            <tr style="background: black;color:white;">
+                                                <td colspan="2">
+                                                    Personal Details
+                                                </td>
+                                            </tr>                                              
                                             <tr>
                                                 <td>Pin</td>
                                                 <td>
@@ -67,6 +72,23 @@
                                             <tr>
                                                 <td>Phone</td>
                                                 <td>{{ $user->phone }}</td>
+                                            </tr>
+                                            <tr style="background: darkgrey;color:white;">
+                                                <td colspan="2">
+                                                    Address
+                                                </td>
+                                            </tr>                                                 
+                                            <tr>
+                                                <td>Number/Street</td>
+                                                <td>{{ $user->address }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Post Town</td>
+                                                <td>{{ $user->post_town }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number/Street</td>
+                                                <td>{{ $user->post_code }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Supporting Statement</td>
@@ -122,8 +144,107 @@
                                                 </tr>         
                                                 @endforeach
                                             @endif
+                                            <tr style="background: black;color:white;">
+                                                <td colspan="2">
+                                                    Declarations
+                                                </td>
+                                            </tr>  
+                                            <tr>
+                                                <td>Do you have any
+                                                    adult cautions (simple or conditional) or spent
+                                                    convictions that are not protected as defined by the Rehabilitation
+                                                    of
+                                                    Offenders Act 1974 (Exceptions) Order 1975 (Amendment) (England and
+                                                    Wales) Order 2020?</td>
+                                                <td>{{ $user->adult_cautions }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Are you barred from
+                                                    working with children or vulnerable
+                                                    adults?
+                                                </td>
+                                                <td>{{ $user->barred_from_children }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    subject to a child court protection proceeding or
+                                                    order?
+                                                </td>
+                                                <td>{{ $user->child_court_protection }}</td>
+                                            </tr>                                                                                                                                                                             
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    subject to an adult court protection proceeding or
+                                                    order?
+                                                </td>
+                                                <td>{{ $user->adult_court_protection }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    refused/cancelled registration relating to
+                                                    childcare?
+                                                </td>
+                                                <td>{{ $user->childcare_cancellation }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    refused/cancelled registration relating to
+                                                    residential homes?
+                                                </td>
+                                                <td>{{ $user->residential_cancellation }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    prohibited from teaching children or from
+                                                    childcare?
+                                                </td>
+                                                <td>{{ $user->teaching_prohibition }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    prohibited from caring for vulnerable
+                                                    adults?
+                                                </td>
+                                                <td>{{ $user->adult_prohibition }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    barred or restricted from working by an
+                                                    employer?
+                                                </td>
+                                                <td>{{ $user->barred_by_employer }}</td>
+                                            </tr>                                                                                       
+                                            <tr>
+                                                <td>
+                                                    Have you ever been
+                                                    barred or restricted from working by a
+                                                    professional body?
+                                                </td>
+                                                <td>{{ $user->barred_by_professional_body }}</td>
+                                            </tr> 
+                                            @if($user->declaration_details)                                                                                                                                                          
+                                            <tr>
+                                                <td>
+                                                    If Yes to any of the
+                                                    above, please give details
+                                                </td>
+                                                <td>{{ $user->declaration_details }}</td>
+                                            </tr>                          
+                                            @endif                                                                                     
                                         </table>
-
+                                        <div class="mt-2">
+                                            <button onclick="window.print()">
+                                                Print
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
