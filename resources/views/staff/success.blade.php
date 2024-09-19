@@ -93,7 +93,7 @@
                                             <tr>
                                                 <td>CV</td>
                                                 <td>                                                    
-                                                    <a href="{{ asset('public/storage/'.$user->cv) }}" target="_blank">
+                                                    <a href="{{ asset('storage/'.$user->cv) }}" target="_blank">
                                                         Click Here to view CV File
                                                     </a>
                                                     </td>
