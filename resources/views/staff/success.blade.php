@@ -91,6 +91,14 @@
                                                 <td>{{ $user->post_code }}</td>
                                             </tr>
                                             <tr>
+                                                <td>CV</td>
+                                                <td>
+                                                    <a href="{{ asset($user->cv) }}" target="_blank">
+                                                        Click Here to view CV File
+                                                    </a>
+                                                    </td>
+                                            </tr>
+                                            <tr>
                                                 <td>Supporting Statement</td>
                                                 <td>{{ $user->supporting_statement }}</td>
                                             </tr>
