@@ -62,6 +62,7 @@ Route::middleware(['auth', 'role:admin'])->group(
     function () {
         //Staff
         Route::get('admin/staff',[StaffController::class,'index'])->name('admin.staffs.index');
+        Route::get('admin/{user}/delete',[StaffController::class,'destroy'])->name('admin.staffs.delete');
         //Pins
         Route::get('/admin/pins',[PinController::class,'index'])->name('admin.pins.index');
         

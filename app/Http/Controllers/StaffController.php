@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class StaffController extends Controller
 {
@@ -158,5 +159,15 @@ class StaffController extends Controller
         }
         $pageTitle = "Registration Success";
         return view('staff.success',compact('user','pageTitle'));
+    }
+
+    public function destroy(User $user){
+        $user->delete();
+        if(!empty($user->cv)){
+            if (Storage::disk('public')->exists($user->cv)) {
+                Storage::disk('public')->delete($user->cv);
+            }            
+        }
+        return redirect()->route('admin.staffs.index')->with('success','User Deleted');
     }
 }

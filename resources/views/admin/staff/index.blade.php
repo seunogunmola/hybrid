@@ -20,6 +20,11 @@
         <hr />
         <div class="card">
             <div class="card-body">
+                @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get("success") }}
+                    </div>
+                @endif
                 <div class="table-responsive">
                     <table id="example2" class="table table-striped table-bordered">
                         <thead>
@@ -47,6 +52,12 @@
                                             <ul class="dropdown-menu" style="margin: 0px;">
                                                 <li><a target="_blank" class="dropdown-item" href="{{ route('register.success',['uniqueid'=>$staff->uniqueid])}}"
                                                         >View Details</a>
+                                                </li>
+                                                <li>
+                                                    <a onclick="return confirm('Are You Sure You Want to Delete this Record?')"  class="dropdown-item" 
+                                                    href="{{ route('admin.staffs.delete',$staff)}}">
+                                                    Delete
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
